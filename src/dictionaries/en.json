@@ -1,0 +1,45 @@
+{
+    "welcome": {
+        "title": "Welcome",
+        "message": "Welcome to our website."
+    },
+    "notFound": {
+        "title": "Not found",
+        "message": "The page you are looking for does not exist."
+    },
+    "error": {
+        "title": "Something went wrong",
+        "try_again": "Try again"
+    },
+    "about": {
+        "menuTitle": "About",
+        "title": "About us",
+        "message": "We are a company that does stuff."
+    },
+    "goBack": "Go back",
+    "home": "Home",
+    "contact": {
+        "menuTitle": "Contact",
+        "title": "Contact us",
+        "your_email": "Your email",
+        "leave_a_message": "Leave a message",
+        "send": "Send"
+    },
+    "products": {
+        "title": "Products"
+    },
+    "categories": {
+        "all": "All",
+        "electronics": "Electronics",
+        "fashion": "Fashion",
+        "home": "Home"
+    },
+    "description": "Description",
+    "cart": {
+        "title": "Your Cart",
+        "total": "Total Price",
+        "empty": "Empty cart"
+    },
+    "price": "Price",
+    "quantity": "Quantity"
+}

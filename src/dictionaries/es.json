@@ -1,0 +1,45 @@
+{
+    "welcome": {
+        "title": "Bienvenido",
+        "message": "Bienvenido a nuestra página web."
+    },
+    "notFound": {
+        "title": "Página no encontrada",
+        "message": "La página que buscas no existe o no está disponible en este momento."
+    },
+    "error": {
+        "title": "Algo salió mal",
+        "try_again": "Intentar de nuevo"
+    },
+    "about": {
+        "menuTitle": "Acerca de",
+        "title": "Acerca de nosotros",
+        "message": "Somos una empresa dedicada a la venta de productos de alta calidad."
+    },
+    "goBack": "Regresar",
+    "home": "Inicio",
+    "contact": {
+        "menuTitle": "Contacto",
+        "title": "Contáctanos",
+        "your_email": "Tu correo electrónico",
+        "leave_a_message": "Dejanos un mensaje",
+        "send": "Enviar"
+    },
+    "products": {
+        "title": "Productos"
+    },
+    "categories": {
+        "all": "Todos",
+        "electronics": "Electrónica",
+        "fashion": "Moda",
+        "home": "Hogar"
+    },
+    "description": "Descripción",
+    "cart": {
+        "title": "Tu carrito",
+        "total": "Precio Total",
+        "empty": "Vaciar carrito"
+    },
+    "price": "Price",
+    "quantity": "Quantity"
+}
