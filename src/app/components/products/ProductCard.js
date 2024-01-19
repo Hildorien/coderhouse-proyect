@@ -8,6 +8,7 @@ export default function ProductCard({ item, lang }) {
             <Link className="flex flex-col" href={`/${lang}/products/detail/${item.slug}`}>
                 <Image
                     alt={item.title[lang]}
+                    // In the future we will use images from Firestore (and not from the public folder)
                     src={`/placeholder.png`}
                     width={288}
                     height={288}
