@@ -10,10 +10,9 @@ const locales = ["es", "en"];
 
 // Get the preferred locale, similar to above or using a library
 function getLocale() {
-    const headers = { "accept-language": "en,es;q=0.5" };
+    const headers = { "accept-language": "es,en;q=0.5" };
     const languages = new Negotiator({ headers }).languages();
     const defaultLocale = "en";
-
     const locale = match(languages, locales, defaultLocale);
 
     return locale;
@@ -22,6 +21,7 @@ function getLocale() {
 const middleware = (request) => {
     // Check if there is any supported locale in the pathname
     const pathname = request.nextUrl.pathname;
+
     const pathnameIsMissingLocale = locales.every(
         (locale) =>
             !pathname.startsWith(`/api`) &&
@@ -45,6 +45,23 @@ const middleware = (request) => {
 
         return result;
     }
+
+    // Check if the pathname has a duplicate locale
+    const pathnameHasDuplicateLocale = locales.some(
+        (locale) =>
+            pathname.startsWith(`/${locale}/${locale}/`) ||
+            pathname === `/${locale}/${locale}`,
+    );
+    if (pathnameHasDuplicateLocale) {
+        // e.g. incoming request is /en-US/en-US/products
+        // The new URL is now /en-US/products
+        const locale = pathname.split("/")[1];
+        const result = NextResponse.redirect(
+            new URL(pathname.replace(`/${locale}/${locale}`, `/${locale}`), request.url),
+        );
+        return result;
+    }
+
 };
 
 export const config = {

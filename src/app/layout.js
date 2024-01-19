@@ -4,8 +4,8 @@ import { Open_Sans } from "next/font/google";
 const myFont = Open_Sans({ weight: "400", subsets: ["latin"] });
 
 export const metadata = {
-  title: 'E-commerce',
-  description: 'E-commerce site powered by Next.js',
+  title: 'Space & Exploration website',
+  description: 'Divulgation site powered by Next.js',
 }
 
 export default function RootLayout({ children }) {

@@ -5,7 +5,7 @@ export default function ProductCard({ item, lang }) {
 
     return (
         <article className="basis-72 shadow-lg rounded">
-            <Link className="flex flex-col" href={`/products/detail/${item.slug}`}>
+            <Link className="flex flex-col" href={`/${lang}/products/detail/${item.slug}`}>
                 <Image
                     alt={item.title[lang]}
                     src={`/placeholder.png`}

@@ -1,65 +1,65 @@
 export const mockData = [
     {
-        category: "electronics",
+        category: "accessories",
         title: {
-            en: "Smartphone",
-            es: "Smartphone",
+            en: "Rocket Launch Backpack",
+            es: "Mochila Rocket Launch",
         },
         description: {
-            en: "A powerful smartphone with advanced features.",
-            es: "Un smartphone potente con características avanzadas.",
+            en: "A backpack for the space travellers.",
+            es: "Una mochila para los viajeros espaciales.",
         },
-        slug: "smartphone",
-        price: 599.99,
+        slug: "rocket-launch-backpack",
+        price: 59.99,
         stock: 10,
     },
     {
-        category: "electronics",
+        category: "accessories",
         title: {
-            en: "Laptop",
-            es: "Computadora Portátil",
+            en: "Galaxy Laptop Case",
+            es: "Funda para laptop Galaxy",
         },
         description: {
-            en: "A high-performance laptop for work and entertainment.",
-            es: "Una computadora portátil de alto rendimiento para el trabajo y el entretenimiento.",
+            en: "A laptop case for the space travellers.",
+            es: "Una funda para laptop para los viajeros espaciales.",
         },
-        slug: "laptop",
-        price: 1299.99,
+        slug: "laptop-galaxy-case",
+        price: 44.99,
         stock: 5,
     },
     {
         category: "fashion",
         title: {
-            en: "T-Shirt",
-            es: "Remera",
+            en: "Cosmic ExplorerT-Shirt",
+            es: "Remera Cosmic Explorer",
         },
         description: {
-            en: "A comfortable and stylish t-shirt for everyday wear.",
-            es: "Una remera cómoda y elegante para el uso diario.",
+            en: "A comfortable and stylish t-shirt for everyday use (whether you are in earth or not).",
+            es: "Una remera cómoda y elegante para uso diario (estés en la tierra o no).",
         },
-        slug: "t-shirt",
+        slug: "cosmic-t-shirt",
         price: 19.99,
         stock: 20,
     },
     {
         category: "fashion",
         title: {
-            en: "Jeans",
-            es: "Vaqueros",
+            en: "Space Galaxy Cowboy Jeans",
+            es: "Jeans Cowboy Galaxy",
         },
         description: {
             en: "Classic jeans that never go out of style.",
-            es: "Vaqueros clásicos que nunca pasan de moda.",
+            es: "Jeans clásicos que nunca pasan de moda.",
         },
         slug: "jeans",
-        price: 49.99,
+        price: 69.99,
         stock: 15,
     },
     {
         category: "home",
         title: {
-            en: "Cushion",
-            es: "Almohadón",
+            en: "Star Cushion",
+            es: "Almohadón Estrella",
         },
         description: {
             en: "A soft and comfortable cushion for your home.",
@@ -72,8 +72,8 @@ export const mockData = [
     {
         category: "home",
         title: {
-            en: "Blanket",
-            es: "Manta",
+            en: "Milky Way Blanket",
+            es: "Manta Milky Way",
         },
         description: {
             en: "A cozy blanket to keep you warm during cold nights.",
@@ -83,5 +83,4 @@ export const mockData = [
         price: 39.99,
         stock: 8,
     },
-    // Add more products here...
 ];

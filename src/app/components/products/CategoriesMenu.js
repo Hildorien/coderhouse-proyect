@@ -10,19 +10,19 @@ export default function CategoriesMenu({ translation }) {
     const pathname = usePathname();
 
     const lastPath = pathname.split("/").pop();
-    const firstPath = pathname.split("/")[1];
+    const lang = pathname.split("/")[1];
 
     const links = [
-        { label: translation.categories.all, href: "/products/all" },
-        { label: translation.categories.electronics, href: "/products/electronics" },
-        { label: translation.categories.fashion, href: "/products/fashion" },
-        { label: translation.categories.home, href: "/products/home" },
+        { label: translation.categories.all, href: `/${lang}/products/all` },
+        { label: translation.categories.accessories, href: `/${lang}/products/accessories` },
+        { label: translation.categories.fashion, href: `/${lang}/products/fashion` },
+        { label: translation.categories.home, href: `/${lang}/products/home` },
     ];
 
     return (
         <aside className="flex flex-col gap-3 p-6">
             {links.map((link) => {
-                const isHome = link.href === "/" && firstPath === lastPath;
+                const isHome = link.href === "/" && lang === lastPath;
 
                 return (
                     <Link

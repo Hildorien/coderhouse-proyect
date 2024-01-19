@@ -1,7 +1,7 @@
 {
     "welcome": {
         "title": "Bienvenido",
-        "message": "Bienvenido a nuestra página web."
+        "message": "Bienvenido a nuestro sitio web, tu puerta de entrada al cosmos. Estamos dedicados a brindarte la información más reciente y fascinante sobre nuestro sistema solar y las emocionantes posibilidades de los viajes espaciales. Nuestra misión es inspirar, educar y despertar la curiosidad en cada persona que visite nuestro sitio. Únete a nosotros mientras exploramos el universo, desentrañamos sus misterios y emprendemos un increíble viaje a través de las estrellas. Por último, pero no menos importante, no olvides visitar nuestra Tienda para ayudarnos a mantener el sitio web en funcionamiento y continuar nuestro trabajo de divulgación espacial. Te invitamos a explorar nuestra tienda y unirte a nosotros en nuestro viaje a través de las estrellas."
     },
     "notFound": {
         "title": "Página no encontrada",
@@ -14,7 +14,7 @@
     "about": {
         "menuTitle": "Acerca de",
         "title": "Acerca de nosotros",
-        "message": "Somos una empresa dedicada a la venta de productos de alta calidad."
+        "message": "Nuestro viaje comenzó a partir de una pasión compartida por los misterios del cosmos. Queríamos crear una plataforma que pudiera llevar las maravillas de nuestro sistema solar y la emoción de los viajes espaciales a todos, sin importar su origen o experiencia. Así nació este sitio web. Nuestro objetivo es hacer que la exploración espacial sea accesible y emocionante para todos. Nos esforzamos por proporcionar la información más reciente, ideas fascinantes y recursos educativos sobre nuestro sistema solar y más allá. Creemos que al compartir este conocimiento, podemos inspirar a una nueva generación de exploradores y soñadores. Para apoyar nuestra misión, también hemos lanzado una tienda de productos. Cada compra nos ayuda a mantener el sitio web en funcionamiento y continuar nuestro trabajo de divulgación espacial. Te invitamos a explorar nuestra tienda y unirte a nosotros en nuestro viaje a través de las estrellas. "
     },
     "goBack": "Regresar",
     "home": "Inicio",
@@ -26,11 +26,11 @@
         "send": "Enviar"
     },
     "products": {
-        "title": "Productos"
+        "title": "Tienda"
     },
     "categories": {
         "all": "Todos",
-        "electronics": "Electrónica",
+        "accessories": "Accesorios",
         "fashion": "Moda",
         "home": "Hogar"
     },
@@ -41,5 +41,9 @@
         "empty": "Vaciar carrito"
     },
     "price": "Price",
-    "quantity": "Quantity"
+    "quantity": "Quantity",
+    "blog": {
+        "menu_title": "Blog",
+        "page_title": "Nuestros planetas"
+    }
 }

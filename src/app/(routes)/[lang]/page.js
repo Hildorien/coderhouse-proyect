@@ -1,4 +1,5 @@
 import CustomTitle from "@/app/components/ui/title/CustomTitle";
+import CustomText from "@/app/components/ui/text/CustomText";
 import { getDictionary } from "@/dictionaries";
 
 
@@ -11,9 +12,7 @@ export default async function HomePage({ params: { lang } }) {
 
     return (
         <CustomTitle title={t.welcome.title}>
-            <p className="text-gray-700 text-sm mt-4 mb-4">
-                {t.welcome.message}
-            </p>
+            <CustomText text={t.welcome.message} />
         </CustomTitle>
     )
 }

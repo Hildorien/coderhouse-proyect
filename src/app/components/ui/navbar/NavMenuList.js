@@ -8,20 +8,21 @@ export default function NavMenuList({ translation }) {
     const pathname = usePathname();
 
     const lastPath = pathname.split("/").pop();
-    const firstPath = pathname.split("/")[1];
+    const lang = pathname.split("/")[1];
 
     const links = [
-        { label: translation.home, href: "/" },
-        { label: translation.products.title, href: "/products/all", },
-        { label: translation.contact.menuTitle, href: "/contact" },
-        { label: translation.about.menuTitle, href: "/about" },
+        { label: translation.home, href: `/${lang}` },
+        { label: translation.products.title, href: `/${lang}/products/all`, },
+        { label: translation.blog.menu_title, href: `/${lang}/blog` },
+        { label: translation.contact.menuTitle, href: `/${lang}/contact` },
+        { label: translation.about.menuTitle, href: `/${lang}/about` },
     ];
 
 
     return (
         <nav className="flex justify-between gap-2">
             {links.map((link) => {
-                const isHome = link.href === "/" && firstPath === lastPath;
+                const isHome = link.href === "/" && lang === lastPath;
                 return (
                     <Link
                         key={link.label}

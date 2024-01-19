@@ -6,7 +6,7 @@ import { Suspense } from "react";
 
 export async function generateMetadata({ params, searchParams }, parent) {
     return {
-        title: `E-commerce - ${params.category}`,
+        title: `Space & Exploration Shop - ${params.category}`,
     };
 }
 
@@ -39,6 +39,7 @@ export default async function Products({ params }) {
             <hr />
             <div className="flex gap-10 mt-2 mb-2">
                 <CategoriesMenu translation={t} />
+                {/* This Suspense is the old way of suspending a component while executing an async function. Now it can be done creating loading into  */}
                 <Suspense fallback={<CustomLoading />}>
                     <ProductList category={category} lang={lang} />
                 </Suspense>
