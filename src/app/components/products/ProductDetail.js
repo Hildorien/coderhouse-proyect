@@ -1,25 +1,8 @@
 import Image from "next/image";
 import GoBack from "../ui/buttons/GoBack";
 import QtySelector from "../ui/counter/QtySelector";
+import { fetchProduct } from "@/app/service/product/productService";
 
-
-// Note on revalidation on dynamic route product/[slug]
-/* 
-As of next@13.4.0 the client side cache has been reworked, dynamic pages are now cached in the client with a timer of 30 seconds, 
-so every 30 seconds your server is recalled, with one catch : this only apply if you navigates to a different page after that time, 
-if you do very fast back & forth to the same page, the timer will reset and only wait for another 30 seconds.
- 
-Source: https://github.com/vercel/next.js/issues/42991
-*/
-
-async function fetchProduct(slug) {
-    const product = await fetch(`http://localhost:3000/api/product/${slug}`, {
-        next: {
-            revalidate: 0, // Always make the request to server. We want the latest data of the product detail. (See notes above to verify no-cache policy on product detail)
-        },
-    }).then((res) => res.json());
-    return product;
-}
 
 export default async function ProductDetail({ slug, lang, translation }) {
     const item = await fetchProduct(slug);

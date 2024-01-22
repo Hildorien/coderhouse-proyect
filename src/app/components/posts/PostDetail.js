@@ -1,12 +1,6 @@
 import Image from "next/image";
 import GoBack from "../ui/buttons/GoBack";
-
-
-async function fetchPost(slug) {
-    // No need to revalidate. A post is not going to change that often.
-    const post = await fetch(`http://localhost:3000/api/post/${slug}`).then((res) => res.json());
-    return post;
-}
+import { fetchPost } from "@/app/service/blog/blogService";
 
 export default async function PostDetail({ slug, lang, translation }) {
     const post = await fetchPost(slug);

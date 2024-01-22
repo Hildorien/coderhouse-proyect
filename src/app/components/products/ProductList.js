@@ -1,17 +1,5 @@
 import ProductCard from "./ProductCard";
-
-async function fetchProducts(category) {
-    const products = await fetch(
-        `http://localhost:3000/api/products/${category}`,
-        {
-            cache: "force-cache",
-            next: {
-                tags: ["products"], // Caching by tag
-            },
-        },
-    ).then((res) => res.json());
-    return products;
-}
+import { fetchProducts } from "@/app/service/product/productService";
 
 export default async function ProductList({ category, lang }) {
     const products = await fetchProducts(category);

@@ -45,5 +45,16 @@
     "blog": {
         "menu_title": "Blog",
         "page_title": "Our planets"
-    }
+    },
+    "admin": {
+        "title": "Administration Panel"
+    },
+    "auth": {
+        "login": "Login",
+        "register": "Register",
+        "enter_credentials": "Enter your credentials",
+        "email_placeholder": "Your Email",
+        "password_placeholder": "Your Password"
+    },
+    "page_under_construction": "Page under construction"
 }
