@@ -13,7 +13,7 @@ export default async function ProductDetail({ slug, lang, translation }) {
             <section className="flex gap-6">
                 <div className="relative basis-1/2">
                     <Image
-                        src={"/placeholder.png"}
+                        src={item.image ?? "/placeholder.png"}
                         alt={item.title[lang]}
                         width={800}
                         height={800}

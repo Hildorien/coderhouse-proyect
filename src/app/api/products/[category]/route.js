@@ -1,18 +1,20 @@
 import { NextResponse } from "next/server";
-import sleep from "@/lib/utils";
-import { revalidateTag } from "next/cache";
-import { mockData } from "@/data/catalog";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { db } from "@/firebase/config";
 
-export async function GET(_, { params }) {
+export async function GET(request, { params }) {
     const { category } = params;
-    const data =
-        category === "all"
-            ? mockData
-            : mockData.filter((i) => i.category.toLowerCase() === category.toLowerCase());
 
-    //Mock fake delay. This sleep will execute the first time but future requests will be cached to deliver content instantly. (sleep won't be executed)
-    await sleep(1000);
-    // Cache data through 'products' tag
-    revalidateTag("products");
-    return NextResponse.json(data);
+    const productsRef = collection(db, "products");
+
+    const q =
+        category === "all"
+            ? productsRef
+            : query(productsRef, where("category", "==", category));
+
+    const queryResult = (await getDocs(q)).docs;
+
+    const docs = queryResult.map((doc) => doc.data());
+
+    return NextResponse.json(docs);
 }

@@ -8,7 +8,7 @@ export default function PostCard({ post, lang }) {
                 <div>
                     <Image
                         alt={post.title[lang]}
-                        src={`/placeholder.png`}
+                        src={post.image ?? `/placeholder.png`}
                         width={250}
                         height={250}
                     />

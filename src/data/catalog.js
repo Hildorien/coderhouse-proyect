@@ -30,7 +30,7 @@ export const mockData = [
     {
         category: "fashion",
         title: {
-            en: "Cosmic ExplorerT-Shirt",
+            en: "Cosmic Explorer T-Shirt",
             es: "Remera Cosmic Explorer",
         },
         description: {

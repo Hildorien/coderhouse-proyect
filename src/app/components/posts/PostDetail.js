@@ -12,7 +12,7 @@ export default async function PostDetail({ slug, lang, translation }) {
             <div className="flex">
                 <Image
                     alt={post.title[lang]}
-                    src={`/placeholder.png`}
+                    src={post.image ?? `/placeholder.png`}
                     width={500}
                     height={500}
                 />

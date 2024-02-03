@@ -56,5 +56,8 @@
         "email_placeholder": "Tu correo electrónico",
         "password_placeholder": "Tu contraseña"
     },
-    "page_under_construction": "Página en construcción"
+    "page_under_construction": "Página en construcción",
+    "product": {
+        "error": "No se pudo encontrar el producto"
+    }
 }

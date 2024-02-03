@@ -8,7 +8,7 @@ export default function CartItem({ item, lang, translation }) {
                     <Image
                         className="p-2"
                         alt={item.title[lang]}
-                        src={'/placeholder.png'}
+                        src={item.image ?? '/placeholder.png'}
                         width={100}
                         height={100}
                     />
