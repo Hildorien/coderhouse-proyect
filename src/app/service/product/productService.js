@@ -2,10 +2,9 @@ export async function fetchProducts(category) {
     const products = await fetch(
         `http://localhost:3000/api/products/${category}`,
         {
-            cache: "force-cache",
             next: {
-                tags: ["products"], // Caching by tag
-            },
+                revalidate: 0, // Always make the request to server. We want the latest data of the products.
+            }
         },
     ).then((res) => res.json());
     return products;
