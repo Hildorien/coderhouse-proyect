@@ -1,6 +1,7 @@
 import Image from "next/image";
 
-export default function CartItem({ item, lang, translation }) {
+export default function CartItem({ item, lang, translation, onRemoveItem }) {
+
     return (
         <li className="flex items-center border-b border-gray-200 py-4">
             <div className="flex-auto">
@@ -23,6 +24,10 @@ export default function CartItem({ item, lang, translation }) {
             </div>
             <div className="flex items-center">
                 <p className="text-sm mr-4">{`${translation.quantity}:  ${item.quantity}`}</p>
+                <button
+                    onClick={() => onRemoveItem(item)}
+                    title={translation.remove}
+                    className="text-red-500 pr-5"> 🗑 </button>
             </div>
         </li>
     );

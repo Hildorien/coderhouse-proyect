@@ -59,5 +59,6 @@
     "page_under_construction": "Página en construcción",
     "product": {
         "error": "No se pudo encontrar el producto"
-    }
+    },
+    "remove": "Eliminar"
 }

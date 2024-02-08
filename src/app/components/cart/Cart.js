@@ -6,7 +6,7 @@ import CustomTitle from "@/app/components/ui/title/CustomTitle";
 import CustomButton from "@/app/components/ui/buttons/CustomButton";
 
 export default function Cart({ lang, translation }) {
-    const { cart, emptyCart } = useCartContext();
+    const { cart, emptyCart, removeFromCart } = useCartContext();
 
     // Cart can have duplicated items. In this page we want to merge them
     const mergeCart = useMemo(() => {
@@ -42,11 +42,15 @@ export default function Cart({ lang, translation }) {
         emptyCart();
     }
 
+    const onRemoveItem = (item) => {
+        removeFromCart(item)
+    }
+
     return (
         <CustomTitle title={translation.cart.title} >
             <ul>
                 {mergeCart.map((item) => (
-                    <CartItem key={item.slug} item={item} lang={lang} translation={translation} />
+                    <CartItem key={item.slug} item={item} lang={lang} translation={translation} onRemoveItem={onRemoveItem} />
                 ))}
             </ul>
             <div className="mt-8">

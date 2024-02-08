@@ -26,9 +26,20 @@ export default function CartProvider({ children }) {
         setCart([]);
     };
 
+    const removeFromCart = (item) => {
+        // Substract one from item quantity, If the quantity is 0, remove the item
+        const index = cart.findIndex((i) => i.slug === item.slug);
+        if (cart[index].quantity > 1) {
+            cart[index].quantity -= 1;
+            setCart([...cart]);
+        } else {
+            setCart(cart.filter((i) => i.slug !== item.slug));
+        }
+    }
+
     return (
         <CartContext.Provider
-            value={{ cart, addToCart, totalQty, isInCart, emptyCart }}
+            value={{ cart, addToCart, totalQty, isInCart, emptyCart, removeFromCart }}
         >
             {children}
         </CartContext.Provider>
