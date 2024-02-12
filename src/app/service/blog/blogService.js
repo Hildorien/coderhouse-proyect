@@ -1,6 +1,8 @@
+import config from "@/config";
+
 export async function fetchPosts() {
     const posts = await fetch(
-        `http://localhost:3000/api/posts`,
+        `${config.serverUrl}/api/posts`,
         {
             cache: "force-cache",
             next: {
@@ -13,6 +15,6 @@ export async function fetchPosts() {
 
 export async function fetchPost(slug) {
     // No need to revalidate. A post is not going to change that often.
-    const post = await fetch(`http://localhost:3000/api/post/${slug}`).then((res) => res.json());
+    const post = await fetch(`${config.serverUrl}/api/post/${slug}`).then((res) => res.json());
     return post;
 }

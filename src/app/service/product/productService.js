@@ -1,6 +1,8 @@
+import config from "@/config";
+
 export async function fetchProducts(category) {
     const products = await fetch(
-        `http://localhost:3000/api/products/${category}`,
+        `${config.serverUrl}/api/products/${category}`,
         {
             next: {
                 revalidate: 0, // Always make the request to server. We want the latest data of the products.
