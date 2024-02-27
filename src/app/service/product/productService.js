@@ -1,9 +1,6 @@
-import config from "@/config";
-
-
 export async function fetchProducts(category) {
     const products = await fetch(
-        `${config.NEXT_PUBLIC_API_URL}/api/products/${category}`,
+        `http://localhost:3000/api/products/${category}`,
         {
             method: "GET",
             next: {

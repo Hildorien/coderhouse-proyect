@@ -3,6 +3,7 @@ import config from "@/config";
 export async function fetchPosts() {
     const posts = await fetch(
         `${config.NEXT_PUBLIC_API_URL}/api/posts`,
+
         {
             method: "GET",
             cache: "force-cache",
