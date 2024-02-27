@@ -11,7 +11,8 @@ export default function AdminLayout({ children, login }) {
     return (
         <>
             {/* Conditionally render a parallel route like the @login page if user is not logged in */}
-            {user.logged ? children : login}
+            {/*user.logged ? children : login*/}
+            {children}
         </>
     );
 }

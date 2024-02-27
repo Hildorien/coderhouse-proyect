@@ -47,7 +47,19 @@
         "page_title": "Our planets"
     },
     "admin": {
-        "title": "Administration Panel"
+        "title": "Administration Panel",
+        "add_product": "Add Product",
+        "edit": "Edit",
+        "product_table": {
+            "name": "Name",
+            "price": "Price",
+            "in_stock": "Stock",
+            "category": "Category",
+            "image": "Image",
+            "slug": "Slug",
+            "description": "Description",
+            "actions": "Actions"
+        }
     },
     "auth": {
         "login": "Login",

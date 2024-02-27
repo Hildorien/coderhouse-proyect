@@ -10,6 +10,7 @@ export default function LoginForm({ translation }) {
         email: "",
         password: ""
     });
+    const [error, setError] = useState(null);
 
     const handleChange = (e) => {
         setValues({
@@ -20,6 +21,17 @@ export default function LoginForm({ translation }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+    }
+
+    const handleAuth = async (authFunction, userCredentials) => {
+        try {
+            const response = await authFunction(userCredentials);
+            setError(null);
+            return response;
+        } catch (error) {
+            console.error(error);
+            setError(error.message);
+        }
     }
 
     return (
@@ -44,8 +56,9 @@ export default function LoginForm({ translation }) {
                     required
                     className="p-2 rounded w-full border border-blue-100 block my-4"
                 />
-                <CustomButtom onClick={() => loginUser(values)} >{translation.auth.login}</CustomButtom>
-                <CustomButtom onClick={() => registerUser(values)} className="mx-4" >{translation.auth.register}</CustomButtom>
+                {error && <p className="text-red-500 m-2">{error}</p>}
+                <CustomButtom onClick={async () => await handleAuth(loginUser, values)} >{translation.auth.login}</CustomButtom>
+                <CustomButtom onClick={async () => await handleAuth(registerUser, values)} className="mx-4" >{translation.auth.register}</CustomButtom>
             </form>
         </div>
     );
