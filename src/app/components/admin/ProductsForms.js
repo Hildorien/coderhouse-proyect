@@ -2,14 +2,14 @@
 import { useState } from "react";
 import CustomButton from "@/app/components/ui/buttons/CustomButton.js";
 import GoBack from "@/app/components/ui/buttons/GoBack.js";
-import { doc, setDoc } from "firebase/firestore";
-import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
-import { db, storage } from "../../../firebase/config.js";
 import Image from "next/image.js";
 import { useRouter } from "next/navigation";
+import { db, storage } from "@/firebase/config.js";
 
 
 const createProduct = async (product, file) => {
+    const { doc, setDoc } = await import("firebase/firestore");
+    const { ref, uploadBytes, getDownloadURL } = await import("firebase/storage");
     const storageRef = ref(storage, product.slug);
     let fileURL = product.image;
     if (file) { // New image was chosen

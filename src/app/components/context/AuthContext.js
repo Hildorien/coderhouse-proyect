@@ -1,6 +1,5 @@
 "use client"
 import { createContext, useContext, useState } from "react";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "@/firebase/config";
 
 const AuthContext = createContext();
@@ -15,6 +14,8 @@ export default function AuthProvider({ children }) {
     });
 
     const registerUser = async (values) => {
+        const { createUserWithEmailAndPassword } = await import('firebase/auth');
+
         const userCredentials = await
             createUserWithEmailAndPassword(auth, values.email, values.password);
 
@@ -28,6 +29,7 @@ export default function AuthProvider({ children }) {
     }
 
     const loginUser = async (values) => {
+        const { signInWithEmailAndPassword } = await import('firebase/auth');
         const userCredentials = await
             signInWithEmailAndPassword(auth, values.email, values.password);
 
