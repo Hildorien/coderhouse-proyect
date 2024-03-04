@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import CustomLoading from "@/app/components/loading/CustomLoading";
 import CategoriesMenu from "@/app/components/products/CategoriesMenu";
 import ProductList from "@/app/components/products/ProductList";
