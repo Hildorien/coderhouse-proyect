@@ -3,7 +3,9 @@ export async function fetchProducts(category) {
         `${process.env.NEXT_PUBLIC_API_URL}/api/products/${category}`,
         {
             method: "GET",
-            cache: "no-store",
+            next: {
+                revalidate: 0,
+            }
         },
     ).then((res) => res.json());
     return products;
@@ -12,7 +14,9 @@ export async function fetchProducts(category) {
 export async function fetchProduct(slug) {
     const product = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/product/${slug}`, {
         method: "GET",
-        cache: "no-store",
+        next: {
+            revalidate: 0,
+        }
     }).then((res) => res.json());
     return product;
 }
