@@ -2,6 +2,7 @@
 import { getDictionary } from "@/dictionaries";
 import Link from 'next/link';
 import ProductsTable from "@/app/components/admin/ProductsTable";
+import { fetchProducts } from "@/app/service/product/productService";
 
 export const metadata = {
     title: "Space & Exploration - Admin",
@@ -11,6 +12,7 @@ export const metadata = {
 export default async function Admin({ params: { lang } }) {
 
     const t = await getDictionary(lang);
+    const items = await fetchProducts("all");
 
     return (
         <div className="container m-auto mt-6">
@@ -22,7 +24,7 @@ export default async function Admin({ params: { lang } }) {
                     {t.admin.add_product}
                 </Link>
             </div>
-            <ProductsTable translation={t} lang={lang} />
+            <ProductsTable translation={t} lang={lang} items={items || []} />
         </div>
     );
 }

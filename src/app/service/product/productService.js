@@ -1,22 +1,25 @@
 export async function fetchProducts(category) {
     const products = await fetch(
-        `http://localhost:3000/api/products/${category}`,
+        `${process.env.NEXT_PUBLIC_API_URL}/api/products/${category}`,
         {
             method: "GET",
-            next: {
-                revalidate: 0, // Always make the request to server. We want the latest data of the products.
-            }
+            cache: "no-store",
         },
     ).then((res) => res.json());
     return products;
 }
 
 export async function fetchProduct(slug) {
-    const product = await fetch(`${config.NEXT_PUBLIC_API_URL}/api/product/${slug}`, {
+    const product = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/product/${slug}`, {
         method: "GET",
-        next: {
-            revalidate: 0, // Always make the request to server. We want the latest data of the product detail.
-        },
+        cache: "no-store",
     }).then((res) => res.json());
     return product;
+}
+
+export async function deleteProduct(slug) {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/product/${slug}`, {
+        method: "DELETE",
+    }).then((res) => res.json());
+    return response;
 }

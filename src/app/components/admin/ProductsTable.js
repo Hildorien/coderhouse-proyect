@@ -1,11 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import DeleteProduct from './DeleteProduct';
-import { fetchProducts } from "@/app/service/product/productService";
 
-export default async function ProductsTable({ translation, lang }) {
-    const items = await fetchProducts("all");
 
+export default async function ProductsTable({ translation, lang, items }) {
     return (
         <div className="overflow-x-auto">
 

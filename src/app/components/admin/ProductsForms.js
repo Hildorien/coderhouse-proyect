@@ -63,7 +63,7 @@ export default function ProductForm({ formValues, translation, lang }) {
      * After creating, the user can edit the product in Spanish and add the Spanish title and description.
      */
     const handleChange = (event) => {
-        const { name, value, dataset } = event.target;
+        const { name, value } = event.target;
 
         if (name === 'title' || name === 'description') {
             setValues(prevValues => ({
@@ -103,9 +103,12 @@ export default function ProductForm({ formValues, translation, lang }) {
             setLoading(true);
             validateData(values);
             await createProduct(values, file)
-                .then(() => {
+                .then(async () => {
                     cleanForm();
-                    router.push("/admin");
+                    // Refresh the page to show the new product
+                    await router.refresh();
+                    // Go back to the previous page
+                    await router.back();
                 })
                 .catch((error) => setError(error.message))
         } catch (error) {

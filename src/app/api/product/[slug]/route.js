@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { doc, getDoc } from "firebase/firestore";
+import { doc, getDoc, deleteDoc } from "firebase/firestore";
 import { db } from "@/firebase/config";
 
 
@@ -21,5 +21,5 @@ export async function DELETE(_, { params }) {
 
     await deleteDoc(docRef);
 
-    return NextResponse.json({ message: "Document deleted successfully" }, { status: 200 });
+    return NextResponse.json({ message: "Document deleted successfully" });
 }
