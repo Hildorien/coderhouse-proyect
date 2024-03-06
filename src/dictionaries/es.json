@@ -66,7 +66,8 @@
         "register": "Registrarse",
         "enter_credentials": "Ingresa tus credenciales",
         "email_placeholder": "Tu correo electrónico",
-        "password_placeholder": "Tu contraseña"
+        "password_placeholder": "Tu contraseña",
+        "google": "Ingresar con Google"
     },
     "page_under_construction": "Página en construcción",
     "product": {

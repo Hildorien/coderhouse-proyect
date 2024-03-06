@@ -3,6 +3,7 @@ import { getDictionary } from "@/dictionaries";
 import Link from 'next/link';
 import ProductsTable from "@/app/components/admin/ProductsTable";
 import { fetchProducts } from "@/app/service/product/productService";
+import LogoutButton from "@/app/components/ui/buttons/LogoutButton";
 
 export const metadata = {
     title: "Space & Exploration - Admin",
@@ -16,6 +17,7 @@ export default async function Admin({ params: { lang } }) {
 
     return (
         <div className="container m-auto mt-6">
+            <LogoutButton />
             <h2 className="text-2xl my-10 border-b pb-4">{t.admin.title}</h2>
             <div className="mb-6">
                 <Link
