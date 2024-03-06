@@ -16,6 +16,7 @@ export default function NavMenuList({ translation }) {
         { label: translation.blog.menu_title, href: `/${lang}/blog` },
         { label: translation.contact.menuTitle, href: `/${lang}/contact` },
         { label: translation.about.menuTitle, href: `/${lang}/about` },
+        { label: "Admin", href: `/${lang}/admin` }
     ];
 
 

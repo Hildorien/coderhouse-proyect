@@ -3,6 +3,7 @@
 import { useState } from "react";
 import CustomButtom from "@/app/components/ui/buttons/CustomButton";
 import { useAuthContext } from "@/app/components/context/AuthContext";
+import GoBack from '@/app/components/ui/buttons/GoBack';
 
 export default function LoginForm({ translation }) {
     const { registerUser, loginUser } = useAuthContext();
@@ -37,6 +38,7 @@ export default function LoginForm({ translation }) {
     return (
         <div className="fixed w-screen h-screen inset-0 z-10 flex justify-center items-center bg-gray-400 bg-opacity-25">
             <form onSubmit={handleSubmit} className="bg-white py-4 px-6 rounded-xl max-w-md w-full">
+                <GoBack text={translation.goBack} className="text-sm text-blue-500 inderline mb-6" />
                 <h2>{translation.auth.enter_credentials}</h2>
                 <input
                     type="email"
